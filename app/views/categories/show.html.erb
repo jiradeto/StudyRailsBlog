@@ -1,12 +1,11 @@
+<div class="post">
 <h1><%=@category.name %></h1>
-
-
 <% @posts.each do |post|%>
 	<h3><%=link_to post.title,  post%></h3>
+	<p><%=post.body%></p>
 <% end %>
 <%if @posts.empty? %>
 <p>Sorry, no post founded for this category </p>
 <%end%>
 
-
-<%= link_to 'Back to category', categories_path%>
+</div>

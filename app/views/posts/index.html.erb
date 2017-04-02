@@ -1,8 +1,15 @@
-<h1>My blog</h1>
-<br/>
+
 <% @posts.each do |post|%>
-<h2><%=link_to post.title, post %></h2>
-<h3><%=post.body %></h3>
-<hr>
+		<div class="post">
+						<h2 class="title"><%=link_to post.title, post %></h2>
+						<div class="entry">
+							<p><%=post.body %></p>
+						</div>
+						<div class="byline">
+							<p class="meta">May 07, 2012 Posted by <a href="#">Someone</a></p>
+							<p class="links"><a href="post.html">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>
+						</div>
+	</div>
 <%end%>
-<%= link_to 'add new post', new_post_path%>
+
+

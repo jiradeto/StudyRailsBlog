@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>StudyRailsBlog</title>
-    <%= csrf_meta_tags %>
+<%= render 'shared/headers'%>
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+          <% flash.each do |k,v|%>
+            <p><%=v%></p>
+           <%end %>
+          <%= yield %>
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+        <%=render 'shared/sidebar'%>
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p>&copy; 2013, My Ruby Blog - Sample Project</p>
+	</div>
+</div>
+<!-- end #footer -->
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-  <% flash.each do |k,v|%>
-    <p><%=v%></p>
-  <%end %>
-    <%= yield %>
   </body>
 </html>
