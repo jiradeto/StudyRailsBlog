@@ -1,2 +1,8 @@
-<h3>Hello WOrld</h3>
-<p>this is my first controller. !!!!</p>
+<h1>My blog</h1>
+<br/>
+<% @posts.each do |post|%>
+<h2><%=link_to post.title, post %></h2>
+<h3><%=post.body %></h3>
+<hr>
+<%end%>
+<%= link_to 'add new post', new_post_path%>

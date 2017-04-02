@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cars
   get 'categories/index'
 
   get 'categories/show'

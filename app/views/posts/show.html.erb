@@ -1,1 +1,5 @@
-<h1>Show page</h1>
+<h1><%=@post.title%></h1>
+<small><%= @post.created_at.strftime("%b %d, %Y")%></small>
+<h3><%=@post.body%></h3>
+Category: <%=link_to @post.category.name, @post.category %><br/>
+<%=link_to "Back", posts_path%>
